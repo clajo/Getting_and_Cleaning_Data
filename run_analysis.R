@@ -60,3 +60,7 @@ grouped_tidydata<-data %>% group_by(subject,activity) %>% summarise_each(funs(me
 
 #export data frame grouped to grouped_tidydata.txt
 write.table(grouped_tidydata,file="grouped_tidydata.txt",row.names = FALSE)
+
+#Cleaning
+rm(activity,data,data_test,data_train,features,subj_test,subj_train,x_test,x_train,y_test,y_train,grouped_tidydata)
+detach("package:dplyr", unload=TRUE)
