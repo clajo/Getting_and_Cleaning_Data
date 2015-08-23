@@ -3,7 +3,7 @@
 # with one row per subject and activity, calculates mean over all mean() and std() variables.
 #The final data frame is exported to grouped_tidydata.txt.
 
-#The folder 'UCI HAR Dataset' should be set as working directory.
+#The folder 'UCI HAR Dataset' should be included in your working directory.
 
 #Load dplyr library 
 library(dplyr)
@@ -12,11 +12,11 @@ library(dplyr)
 #--test data------------------------------------------
 
 #read X_test data
-x_test<-read.table("test/X_test.txt")
+x_test<-read.table("UCI HAR Dataset/test/X_test.txt")
 #Read subject_test 
-subj_test<-read.table("test/subject_test.txt")
+subj_test<-read.table("UCI HAR Dataset/test/subject_test.txt")
 #Read y_test (activity_codes)
-y_test<-read.table("test/y_test.txt")
+y_test<-read.table("UCI HAR Dataset/test/y_test.txt")
 
 #merge test data into a data.frame data_test 
 data_test<-data.frame(subj_test,y_test,x_test)
@@ -26,11 +26,11 @@ data_test<-data.frame(subj_test,y_test,x_test)
 #--training data-----------------------------------------
 
 #read X_train data
-x_train<-read.table("train/X_train.txt")
+x_train<-read.table("UCI HAR Dataset/train/X_train.txt")
 #Read subject_train 
-subj_train<-read.table("train/subject_train.txt")
+subj_train<-read.table("UCI HAR Dataset/train/subject_train.txt")
 #Read y_train (activity_codes)
-y_train<-read.table("train/y_train.txt")
+y_train<-read.table("UCI HAR Dataset/train/y_train.txt")
 
 #merge train data into a data.frame data_train
 data_train<-data.frame(subj_train,y_train,x_train)
@@ -42,13 +42,13 @@ data_train<-data.frame(subj_train,y_train,x_train)
 data<-rbind(data_test,data_train)
 
 #Read in features
-features<-read.table("features.txt")
+features<-read.table("UCI HAR Dataset/features.txt")
 
 #Add column names to trans
 colnames(data)<-c("subject","activity_code",as.character(features[,2]))
 
 #Read activity_labels
-activity<-read.table("activity_labels.txt")
+activity<-read.table("UCI HAR Dataset/activity_labels.txt")
 #Add column names to Activity
 colnames(activity)<-c("activity_code","activity")
 

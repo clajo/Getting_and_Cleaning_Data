@@ -10,10 +10,15 @@ and data used in the project can be obtained here:
 
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
-Download the data and set the folder 'UCI HAR Dataset' as your working directory.
+Download the data set 'UCI HAR Dataset' into your working directory.
+Copy run_analysis.R into you working directory.
 
-This R code in run_analysis.R reads data from the 'UCI HAR Dataset'. It combine training and test data, transfors it into a data frame with one row per subject and activity, calculates mean over all mean() or std() variables.
+This R code in run_analysis.R reads data from the 'UCI HAR Dataset'. It combine training and test data, transfors it into a data frame with one row per subject and activity, calculates mean for all mean() or std() variables.
+The libary dplyr is used in selecting columns, grouping the data (group_by) by subject and activity, and in calculating the mean for all variables included (summarise_each). 
+
 The final data frame is exported to grouped_tidydata.txt.
+
+
 
 
 
